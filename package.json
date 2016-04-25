@@ -1,6 +1,6 @@
 {
   "name": "atl",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Version At Least x.x.x",
   "main": "dist/index.js",
   "scripts": {
