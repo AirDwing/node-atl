@@ -5,7 +5,18 @@ module.exports = (input, need) => {
   if (inputVersion === null || requireVersion === null) {
     throw new Error('Invalid Version');
   }
-  const inputVersionCode = (inputVersion[1] << 16) + (inputVersion[2] << 8) + (inputVersion[3] << 0);
-  const requireVersionCode = (requireVersion[1] << 16) + (requireVersion[2] << 8) + (requireVersion[3] << 0);
-  return inputVersionCode >= requireVersionCode;
+  if (inputVersion[1] > requireVersion[1]) {
+    return true;
+  } else if (inputVersion[1] < requireVersion[1]) {
+    return false;
+  }
+  if (inputVersion[2] > requireVersion[2]) {
+    return true;
+  } else if (inputVersion[2] < requireVersion[2]) {
+    return false;
+  }
+  if (inputVersion[3] >= requireVersion[3]) {
+    return true;
+  }
+  return false;
 };
