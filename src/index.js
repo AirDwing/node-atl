@@ -3,7 +3,7 @@ module.exports = (input, need) => {
   const inputVersion = input.match(regx);
   const requireVersion = need.match(regx);
   if (inputVersion === null || requireVersion === null) {
-    throw new Error('Invalid Version');
+    return false;
   }
   if (inputVersion[1] > requireVersion[1]) {
     return true;
