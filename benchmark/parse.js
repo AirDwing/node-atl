@@ -1,4 +1,4 @@
-var atl = require('../dist');
+var atl = require('../src');
 var atls = function (input, need) {
   var regx = /^v?V?(\d+).(\d+).(\d+)-?/;
   var inputVersion = input.match(regx);
